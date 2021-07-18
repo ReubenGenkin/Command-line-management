@@ -1,0 +1,26 @@
+{
+    "name": "employee-management-system",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "node server.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/damatgre/employee-management-system.git"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/damatgre/employee-management-system/issues"
+    },
+    "homepage": "https://github.com/damatgre/employee-management-system#readme",
+    "dependencies": {
+        "console.table": "^0.10.0",
+        "inquirer": "^8.1.1",
+        "mysql2": "^2.2.5"
+    }
+}
