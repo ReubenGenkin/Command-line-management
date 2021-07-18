@@ -20,7 +20,8 @@
     "homepage": "https://github.com/damatgre/employee-management-system#readme",
     "dependencies": {
         "console.table": "^0.10.0",
-        "inquirer": "^8.1.1",
+        "inquirer": "^8.1.2",
+        "mysql": "^2.18.1",
         "mysql2": "^2.2.5"
     }
 }
