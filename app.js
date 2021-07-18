@@ -16,36 +16,54 @@ db.connect(err => {
 });
 
 function init() {
+    //initial prompts
     inquirer.prompt([
-      {
-        type: 'list',
-        name: 'menuChoices',
-        message: 'What would you like to do?',
-        choices: [
-          'View all departments',
-          'View all roles',
-          'View all employees',
-          'Add a department',
-          'Add a role',
-          'Add an employee',
-          'Update an employee role'
-        ]
-      }
-  
+        {
+            type: 'list',
+            name: 'menuChoices',
+            message: 'What would you like to do?',
+            choices: [
+                'View all departments',
+                'View all roles',
+                'View all employees',
+                'Add a department',
+                'Add a role',
+                'Add an employee',
+                'Update an employee role'
+            ]
+        }
+
     ]).then(answers => {
-  
-      switch (answers.menuChoices) {
-  
-        case "View all departments":
-          viewAllDepartments();
-          break;
-      
+
+        //switch to change outcome based on answer
+        switch (answers.menuChoices) {
+
+            case "View all departments":
+                viewAllDepartments();
+                break;
+
+            case "View all roles":
+                viewAllRoles();
+                break;
+
         }
     })
 }
 
+// query the database to select all from department
 viewAllDepartments = () => {
     db.query('SELECT * FROM department', (err, res) => {
+        if (err) {
+            throw err;
+        }
+        console.table(res);
+        init();
+    });
+};
+
+// query the database to select all from roles
+viewAllRoles = () => {
+    db.query('SELECT * FROM roles', (err, res) => {
       if (err) {
         throw err;
       }
